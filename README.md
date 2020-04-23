@@ -18,7 +18,7 @@ import { Tab, Accordion } from "@am/rc-component";
 
 ## Storybook
 
-To run the storybook
+See the visualization of the component by run the storybook
 
 ```
 npm run storybook
