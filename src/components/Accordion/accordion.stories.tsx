@@ -10,7 +10,7 @@ export default {
   title: "Accordion",
   component: Accordion,
   decorators: [withKnobs],
-  parameters: { notes: accordionNotes },
+  parameters: { notes: accordionNotes, jest: ["accordion.test.tsx"] },
 };
 
 const STYLE: IAccordionStyle = {
