@@ -8,7 +8,10 @@ import { COLOR } from "../../constants";
 
 export default {
   title: "Tab",
-  parameters: { notes: tabNotes },
+  parameters: {
+    notes: tabNotes,
+    jest: ["tab.test.tsx"],
+  },
   decorators: [withKnobs],
 };
 
@@ -50,4 +53,22 @@ export const tab = () => {
   };
 
   return <Tab panes={panes} {...actionsData} style={style} />;
+};
+
+export const tabMobileVersion = () => {
+  const panes = object("panes", DEFAULT_PANES, "Props Tab");
+
+  const style = object("style", STYLE, "Props Tab");
+
+  const actionsData = {
+    onTabChange: action("onTabChange"),
+  };
+
+  return <Tab panes={panes} {...actionsData} style={style} />;
+};
+
+tabMobileVersion.story = {
+  parameters: {
+    viewport: { defaultViewport: "iphone6" },
+  },
 };

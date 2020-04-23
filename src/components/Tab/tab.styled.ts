@@ -33,17 +33,18 @@ const TabMenuItem = styled.a<{ styled?: ITabStyle }>`
 
   &.active {
     font-weight: ${FONT_WEIGHT.BOLD};
-    border-bottom: 1px solid
-      ${(props) =>
-        props.styled && props.styled.backgroundColor
-          ? props.styled.backgroundColor
-          : COLOR.WHITE};
+
     background-color: ${(props) =>
       props.styled ? props.styled.backgroundColor : undefined};
     border-color: ${(props) =>
       props.styled && props.styled.activeBorderColor
         ? props.styled.activeBorderColor
         : undefined};
+    border-bottom: 1px solid
+      ${(props) =>
+        props.styled && props.styled.backgroundColor
+          ? props.styled.backgroundColor
+          : COLOR.WHITE};
     color: ${(props) =>
       props.styled && props.styled.activeTabColor
         ? props.styled.activeTabColor
@@ -52,7 +53,10 @@ const TabMenuItem = styled.a<{ styled?: ITabStyle }>`
 
   @media (max-width: 767px) {
     display: block;
-    margin-left: 0;
+
+    &:not(:first-of-type) {
+      margin-left: 0;
+    }
   }
 `;
 
