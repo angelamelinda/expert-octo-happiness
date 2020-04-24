@@ -13,13 +13,11 @@ export default {
       file: pkg.main,
       format: "cjs",
       exports: "named",
-      sourcemap: true,
     },
     {
       file: pkg.module,
       format: "es",
       exports: "named",
-      sourcemap: true,
     },
   ],
   plugins: [
@@ -32,7 +30,7 @@ export default {
     }),
     commonjs({
       include: ["node_modules/**"],
-      exclude: ["**/*.stories.js"],
+      exclude: ["**/*.stories.tsx"],
       namedExports: {
         "node_modules/react/react.js": [
           "Children",

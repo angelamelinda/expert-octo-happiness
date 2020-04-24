@@ -1,0 +1,11 @@
+src
+coverage
+.storybook
+
+jest.setup.ts
+jest.config.js
+tsconfig.json
+.jest-test-results.json
+
+ **/*.test.tsx
+ **/*.stories.tsx

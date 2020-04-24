@@ -31,9 +31,12 @@ const TabMenuItem = styled.a<{ styled?: ITabStyle }>`
     margin-left: 3px;
   }
 
-  &.active {
+  &.active,
+  &:hover {
     font-weight: ${FONT_WEIGHT.BOLD};
+  }
 
+  &.active {
     background-color: ${(props) =>
       props.styled ? props.styled.backgroundColor : undefined};
     border-color: ${(props) =>
