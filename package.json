@@ -1,6 +1,6 @@
 {
   "name": "@am/rc-component",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -15,9 +15,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/angelamelinda/expert-octo-happiness.git"
-  },
-  "publishConfig": {
-    "registry": "http://localhost:4873"
   },
   "author": "angelamelinda",
   "license": "MIT",
