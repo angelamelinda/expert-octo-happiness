@@ -1,5 +1,5 @@
 {
-  "name": "@am/rc-component",
+  "name": "am-rccomponent",
   "version": "0.0.1",
   "description": "",
   "main": "build/index.js",
