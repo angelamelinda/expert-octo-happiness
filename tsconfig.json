@@ -20,5 +20,5 @@
     "jsx": "react"
   },
   "include": ["src", "typings.d.ts"],
-  "exclude": ["node_modules", "build"]
+  "exclude": ["node_modules", "build", "**/*.test.tsx", "**/*.stories.tsx"]
 }
