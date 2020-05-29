@@ -32,3 +32,4 @@ interface IAccordionData {
 | onClickedAccordion     | (data: IAccordionData) => void | A callback return data                                                                                                                            | No       |
 | style                  | IAccordionStyle                | Additional style for the accordion. If the additional style can not complete your requirement, please using the class name and do manual styling. | No       |
 | className              | string                         | Additional class name                                                                                                                             | No       |
+| isOpenFirstAccordion   | boolean                        | If you want to open the first accordion, fill the props with true.                                                                                | No       |
