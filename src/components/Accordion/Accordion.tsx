@@ -40,6 +40,7 @@ export interface IAccordion {
   onClickedAccordion?: (data: IAccordionData) => void;
   style?: IAccordionStyle;
   className?: string;
+  isOpenFirstAccordion?: boolean;
 }
 
 const Accordion: FC<IAccordion> = ({
@@ -48,6 +49,7 @@ const Accordion: FC<IAccordion> = ({
   onClickedAccordion,
   style,
   className,
+  isOpenFirstAccordion,
 }) => {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
   const [statusAccordion, setStatusAccordion] = useState<{
@@ -143,6 +145,12 @@ const Accordion: FC<IAccordion> = ({
       }
     }
   };
+
+  useEffect(() => {
+    if (isOpenFirstAccordion) {
+      handleClickAccordion(0);
+    }
+  }, []);
 
   useEffect(() => {
     if (activeAccordionAppears === "ONE") {

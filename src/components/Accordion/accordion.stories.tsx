@@ -34,7 +34,7 @@ const DEFAULT_PANES: IAccordionPanes[] = [
 export const oneActiveAccordion = () => {
   const activeAccordionAppearsOptionCheck = radios(
     "activeAccordionAppears",
-    { ONE: "ONE" },
+    { ONE: "ONE", MANY: "MANY" },
     "ONE",
     "Props Accordion"
   );
@@ -47,9 +47,17 @@ export const oneActiveAccordion = () => {
     onClickedAccordion: action("onClickedAccordion"),
   };
 
+  const isOpenFirstAccordion = radios(
+    "isOpenFirstAccordion",
+    { true: "true", false: "false" },
+    "false",
+    "Props Accordion"
+  );
+
   return (
     <Accordion
       panes={panes}
+      isOpenFirstAccordion={isOpenFirstAccordion === "true"}
       activeAccordionAppears={activeAccordionAppearsOptionCheck}
       {...actionsData}
       style={style}
@@ -60,7 +68,7 @@ export const oneActiveAccordion = () => {
 export const manyActiveAccordion = () => {
   const activeAccordionAppearsOptionCheck = radios(
     "activeAccordionAppears",
-    { MANY: "MANY" },
+    { ONE: "ONE", MANY: "MANY" },
     "MANY",
     "Props Accordion"
   );
@@ -73,9 +81,51 @@ export const manyActiveAccordion = () => {
     onClickedAccordion: action("onClickedAccordion"),
   };
 
+  const isOpenFirstAccordion = radios(
+    "isOpenFirstAccordion",
+    { true: "true", false: "false" },
+    "false",
+    "Props Accordion"
+  );
+
   return (
     <Accordion
       panes={panes}
+      isOpenFirstAccordion={isOpenFirstAccordion === "true"}
+      activeAccordionAppears={activeAccordionAppearsOptionCheck}
+      {...actionsData}
+      style={style}
+    />
+  );
+};
+
+export const oneActiveAccordionWithOpenFirstAccordion = () => {
+  const activeAccordionAppearsOptionCheck = radios(
+    "activeAccordionAppears",
+    { ONE: "ONE", MANY: "MANY" },
+    "ONE",
+    "Props Accordion"
+  );
+
+  const panes = object("panes", DEFAULT_PANES, "Props Accordion");
+
+  const style = object("style", STYLE, "Props Accordion");
+
+  const actionsData = {
+    onClickedAccordion: action("onClickedAccordion"),
+  };
+
+  const isOpenFirstAccordion = radios(
+    "isOpenFirstAccordion",
+    { true: "true", false: "false" },
+    "true",
+    "Props Accordion"
+  );
+
+  return (
+    <Accordion
+      panes={panes}
+      isOpenFirstAccordion={isOpenFirstAccordion === "true"}
       activeAccordionAppears={activeAccordionAppearsOptionCheck}
       {...actionsData}
       style={style}
